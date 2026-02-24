@@ -142,7 +142,19 @@
     color: var(--color-text-light);
     font-weight: 500;
     white-space: nowrap;
-    display: none;
+    display: none !important;
+}
+
+/* Force mobile styles for screens under 1024px */
+@media (max-width: 1024px) {
+    .tower-label {
+        display: none !important;
+    }
+
+    .game-board {
+        flex: none !important;
+        padding: 20px 4px 20px 4px !important;
+    }
 }
 
 /* Hint highlight */
@@ -175,8 +187,8 @@
     }
 }
 
-/* Desktop - larger screens */
-@media (min-width: 769px) {
+/* Desktop - larger screens only (NOT mobile, even high-res) */
+@media (min-width: 1025px) {
     :root {
         --disk-height: 22px;
         --disk-min-width: 55px;

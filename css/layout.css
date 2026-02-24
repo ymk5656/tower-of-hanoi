@@ -41,7 +41,14 @@ body {
 }
 
 .move-counter .label {
-    display: none;
+    display: none !important;
+}
+
+/* Force mobile styles under 1024px */
+@media (max-width: 1024px) {
+    .move-counter .label {
+        display: none !important;
+    }
 }
 
 .move-counter .count {
@@ -55,14 +62,12 @@ body {
 
 /* Game Board */
 .game-board {
-    flex: 0 0 auto;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    padding: 8px 4px 10px 4px;
-    overflow: hidden;
+    padding: 20px 4px 20px 4px;
+    overflow: visible;
     position: relative;
-    min-height: auto;
 }
 
 .towers-container {
