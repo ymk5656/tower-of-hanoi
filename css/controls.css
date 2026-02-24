@@ -207,13 +207,13 @@
 }
 
 /* Responsive adjustments */
-@media (max-width: 375px) {
+@media (max-width: 430px) {
     .setup-controls {
-        gap: 5px;
+        gap: 4px;
     }
 
     .game-controls {
-        gap: 5px;
+        gap: 4px;
     }
 
     .btn {

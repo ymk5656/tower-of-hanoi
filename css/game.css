@@ -135,7 +135,7 @@
 /* Tower labels */
 .tower-label {
     position: absolute;
-    bottom: -8px;
+    bottom: -6px;
     left: 50%;
     transform: translateX(-50%);
     font-size: var(--font-size-sm);
@@ -175,12 +175,12 @@
 }
 
 /* Responsive adjustments */
-@media (max-width: 375px) {
+@media (max-width: 430px) {
     :root {
         --disk-height: 14px;
         --disk-min-width: 35px;
         --disk-width-increment: 9px;
-        --peg-height: 60px;
+        --peg-height: 55px;
     }
 
     .disk {
@@ -188,26 +188,25 @@
     }
 
     .towers-container {
-        max-height: 90px;
+        max-height: 85px;
         padding: 0 4px;
-        margin: 2px 0;
+        margin: 0;
     }
 
     .tower {
-        padding-bottom: 16px;
+        padding-bottom: 0;
     }
 
     .disk-container {
-        padding-bottom: 8px;
+        padding-bottom: 6px;
     }
 
     .peg {
-        bottom: 16px;
+        bottom: 6px;
     }
 
     .tower-label {
-        bottom: -6px;
-        font-size: 11px;
+        display: none;
     }
 }
 
