@@ -1,0 +1,200 @@
+/* Game Board Styles */
+
+/* Tower */
+.tower {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    width: 33%;
+    max-width: 150px;
+    min-width: 100px;
+    position: relative;
+    padding-bottom: 30px;
+}
+
+/* Peg */
+.peg {
+    position: absolute;
+    bottom: 30px;
+    width: var(--peg-width);
+    height: var(--peg-height);
+    background: var(--peg-color);
+    border-radius: var(--peg-width);
+    z-index: var(--z-base);
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.peg::after {
+    content: '';
+    position: absolute;
+    bottom: calc(var(--peg-height) * -1);
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 20px;
+    background: radial-gradient(ellipse at center, var(--tower-base-color) 0%, #5D6D7E 100%);
+    border-radius: 50%;
+    box-shadow: 0 3px 8px var(--color-shadow), inset 0 -2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Disk Container */
+.disk-container {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    min-height: calc(var(--disk-height) + var(--disk-margin) * 2);
+    width: 100%;
+    position: relative;
+    z-index: var(--z-disk);
+    gap: var(--disk-margin);
+    padding-bottom: 30px;
+}
+
+/* Disk */
+.disk {
+    height: var(--disk-height);
+    border-radius: var(--disk-border-radius);
+    cursor: grab;
+    touch-action: none;
+    user-select: none;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: white;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: var(--shadow-md), inset 0 2px 4px rgba(255, 255, 255, 0.3);
+    transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.disk:active {
+    cursor: grabbing;
+}
+
+.disk:hover:not(.dragging) {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg), inset 0 2px 4px rgba(255, 255, 255, 0.3);
+}
+
+/* Disk sizes and colors */
+.disk[data-size="1"] {
+    width: calc(var(--disk-min-width) + var(--disk-width-increment) * 0);
+    background: linear-gradient(135deg, var(--color-disk-1) 0%, #D32F2F 100%);
+}
+
+.disk[data-size="2"] {
+    width: calc(var(--disk-min-width) + var(--disk-width-increment) * 1);
+    background: linear-gradient(135deg, var(--color-disk-2) 0%, #E68900 100%);
+}
+
+.disk[data-size="3"] {
+    width: calc(var(--disk-min-width) + var(--disk-width-increment) * 2);
+    background: linear-gradient(135deg, var(--color-disk-3) 0%, #F9A825 100%);
+}
+
+.disk[data-size="4"] {
+    width: calc(var(--disk-min-width) + var(--disk-width-increment) * 3);
+    background: linear-gradient(135deg, var(--color-disk-4) 0%, #2E7D32 100%);
+}
+
+.disk[data-size="5"] {
+    width: calc(var(--disk-min-width) + var(--disk-width-increment) * 4);
+    background: linear-gradient(135deg, var(--color-disk-5) 0%, #0056B3 100%);
+}
+
+/* Dragging state */
+.disk.dragging {
+    cursor: grabbing;
+    opacity: 0.8;
+    transform: scale(1.05) rotate(2deg);
+    box-shadow: var(--shadow-lg);
+    z-index: var(--z-dragging);
+    pointer-events: none;
+}
+
+/* Disk cannot be moved (not top disk) */
+.disk.disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+/* Tower highlight when valid drop target */
+.tower.drop-target .peg {
+    background: var(--color-secondary);
+    box-shadow: 0 0 20px var(--color-secondary);
+}
+
+/* Tower highlight when invalid drop target */
+.tower.invalid-target .peg {
+    background: var(--color-danger);
+    box-shadow: 0 0 20px var(--color-danger);
+}
+
+/* Tower labels */
+.tower-label {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: var(--font-size-sm);
+    color: var(--color-text-light);
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+/* Hint highlight */
+.disk.hint-source {
+    animation: hintPulse 1s ease-in-out infinite;
+}
+
+.tower.hint-target .peg {
+    animation: hintGlow 1s ease-in-out infinite;
+}
+
+@keyframes hintPulse {
+    0%, 100% {
+        transform: translateY(0) scale(1);
+        box-shadow: var(--shadow-md), inset 0 2px 4px rgba(255, 255, 255, 0.3);
+    }
+    50% {
+        transform: translateY(-4px) scale(1.05);
+        box-shadow: 0 8px 20px rgba(241, 196, 15, 0.6), inset 0 2px 4px rgba(255, 255, 255, 0.3);
+    }
+}
+
+@keyframes hintGlow {
+    0%, 100% {
+        box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+    50% {
+        background: #F1C40F;
+        box-shadow: 0 0 20px rgba(241, 196, 15, 0.8);
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 375px) {
+    :root {
+        --disk-height: 28px;
+        --disk-min-width: 50px;
+        --disk-width-increment: 16px;
+        --peg-height: 180px;
+    }
+
+    .disk {
+        font-size: var(--font-size-sm);
+    }
+}
+
+@media (orientation: landscape) and (max-height: 500px) {
+    :root {
+        --disk-height: 24px;
+        --peg-height: 140px;
+    }
+
+    .towers-container {
+        max-height: 250px;
+    }
+}

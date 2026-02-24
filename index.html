@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#4A90E2">
+    <title>Tower of Hanoi</title>
+
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/game.css">
+    <link rel="stylesheet" href="css/controls.css">
+    <link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+    <div class="game-container">
+        <!-- Header -->
+        <header class="game-header">
+            <h1 class="game-title">Tower of Hanoi</h1>
+            <div class="move-counter">
+                <span class="label">Moves:</span>
+                <span class="count" id="moveCount">0</span>
+            </div>
+        </header>
+
+        <!-- Game Board -->
+        <main class="game-board">
+            <div class="towers-container" id="towersContainer">
+                <div class="tower" data-tower="0">
+                    <div class="peg"></div>
+                    <div class="disk-container" id="tower0"></div>
+                    <div class="tower-label">Source</div>
+                </div>
+                <div class="tower" data-tower="1">
+                    <div class="peg"></div>
+                    <div class="disk-container" id="tower1"></div>
+                    <div class="tower-label">Auxiliary</div>
+                </div>
+                <div class="tower" data-tower="2">
+                    <div class="peg"></div>
+                    <div class="disk-container" id="tower2"></div>
+                    <div class="tower-label">Target</div>
+                </div>
+            </div>
+
+            <!-- Hint Display -->
+            <div class="hint-display" id="hintDisplay" style="display: none;">
+                <span class="hint-text" id="hintText"></span>
+            </div>
+        </main>
+
+        <!-- Controls -->
+        <footer class="controls">
+            <!-- Disk Selection (only visible during setup) -->
+            <div class="setup-controls" id="setupControls">
+                <div class="disk-selector">
+                    <label class="selector-label">Number of Disks:</label>
+                    <div class="disk-options">
+                        <label class="disk-option">
+                            <input type="radio" name="diskCount" value="3" checked>
+                            <span>3</span>
+                        </label>
+                        <label class="disk-option">
+                            <input type="radio" name="diskCount" value="4">
+                            <span>4</span>
+                        </label>
+                        <label class="disk-option">
+                            <input type="radio" name="diskCount" value="5">
+                            <span>5</span>
+                        </label>
+                    </div>
+                </div>
+                <button class="btn btn-primary" id="startBtn">Start Game</button>
+            </div>
+
+            <!-- Game Controls (visible during gameplay) -->
+            <div class="game-controls" id="gameControls" style="display: none;">
+                <div class="control-group">
+                    <button class="btn btn-secondary" id="hintBtn">💡 Hint</button>
+                    <button class="btn btn-secondary" id="autoSolveBtn">🤖 Auto Solve</button>
+                    <button class="btn btn-danger" id="resetBtn">🔄 Reset</button>
+                </div>
+
+                <!-- Speed Control (visible during auto-solve) -->
+                <div class="speed-control" id="speedControl" style="display: none;">
+                    <label class="speed-label">Speed:</label>
+                    <input type="range" id="speedSlider" min="100" max="2000" value="500" step="100">
+                    <span class="speed-value" id="speedValue">0.5s</span>
+                </div>
+            </div>
+        </footer>
+
+        <!-- Rotate Prompt (for landscape mode during gameplay) -->
+        <div class="rotate-prompt" id="rotatePrompt" style="display: none;">
+            <div class="rotate-content">
+                <div class="rotate-icon">📱</div>
+                <p>Please rotate your device to portrait mode</p>
+            </div>
+        </div>
+
+        <!-- Victory Modal -->
+        <div class="victory-modal" id="victoryModal" style="display: none;">
+            <div class="victory-content">
+                <h2 class="victory-title">🎉 Congratulations! 🎉</h2>
+                <p class="victory-message">You solved the puzzle!</p>
+                <div class="victory-stats">
+                    <div class="stat">
+                        <span class="stat-label">Moves:</span>
+                        <span class="stat-value" id="finalMoves">0</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-label">Optimal:</span>
+                        <span class="stat-value" id="optimalMoves">0</span>
+                    </div>
+                </div>
+                <button class="btn btn-primary" id="playAgainBtn">Play Again</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- External Libraries -->
+    <script src="https://cdn.skypack.dev/canvas-confetti@1.5.1"></script>
+
+    <!-- Game Scripts -->
+    <script src="js/app.js"></script>
+</body>
+</html>
