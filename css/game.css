@@ -177,10 +177,10 @@
 /* Responsive adjustments */
 @media (max-width: 375px) {
     :root {
-        --disk-height: 28px;
+        --disk-height: 24px;
         --disk-min-width: 50px;
         --disk-width-increment: 16px;
-        --peg-height: 180px;
+        --peg-height: 140px;
     }
 
     .disk {
@@ -190,11 +190,11 @@
 
 @media (orientation: landscape) and (max-height: 500px) {
     :root {
-        --disk-height: 24px;
-        --peg-height: 140px;
+        --disk-height: 22px;
+        --peg-height: 120px;
     }
 
     .towers-container {
-        max-height: 250px;
+        max-height: 200px;
     }
 }
