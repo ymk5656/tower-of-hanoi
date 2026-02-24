@@ -1,5 +1,17 @@
 /* Controls Styles */
 
+/* Game Instruction */
+.game-instruction {
+    text-align: center;
+    font-size: 11px;
+    color: var(--color-text-light);
+    margin: 0 0 8px 0;
+    padding: 6px 8px;
+    background: var(--color-background);
+    border-radius: 6px;
+    line-height: 1.4;
+}
+
 /* Setup Controls */
 .setup-controls {
     display: flex;
