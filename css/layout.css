@@ -65,7 +65,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    padding: 200px 4px 200px 4px;
+    padding: 170px 4px 170px 4px;
     overflow: visible;
     position: relative;
 }
