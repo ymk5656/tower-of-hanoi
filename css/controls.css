@@ -4,20 +4,20 @@
 .setup-controls {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 6px;
 }
 
 .disk-selector {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: var(--spacing-md);
+    gap: 8px;
 }
 
 .selector-label {
     font-weight: 600;
     color: var(--color-text);
-    font-size: var(--font-size-md);
+    font-size: 12px;
 }
 
 .disk-options {
@@ -29,14 +29,14 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: var(--spacing-sm) var(--spacing-md);
+    padding: 6px 10px;
     background: var(--color-background);
     border: 2px solid var(--color-border);
-    border-radius: 6px;
+    border-radius: 5px;
     cursor: pointer;
     transition: all var(--transition-fast);
-    min-width: 36px;
-    min-height: 36px;
+    min-width: 28px;
+    min-height: 28px;
 }
 
 .disk-option:hover {
@@ -59,7 +59,7 @@
 }
 
 .disk-option span {
-    font-size: var(--font-size-md);
+    font-size: 12px;
     font-weight: 600;
 }
 
@@ -67,28 +67,28 @@
 .game-controls {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 6px;
 }
 
 .control-group {
     display: flex;
-    gap: 6px;
+    gap: 4px;
 }
 
 /* Buttons */
 .btn {
     flex: 1;
-    padding: var(--spacing-md) var(--spacing-lg);
-    border-radius: 8px;
-    font-size: var(--font-size-md);
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 12px;
     font-weight: 600;
     transition: all var(--transition-fast);
     box-shadow: var(--shadow-sm);
-    min-height: 48px;
+    min-height: 32px;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: var(--spacing-xs);
+    gap: 4px;
 }
 
 .btn:active {
@@ -206,56 +206,3 @@
     color: var(--color-primary);
 }
 
-/* Responsive adjustments - Mobile portrait */
-@media (max-width: 768px) and (orientation: portrait) {
-    .setup-controls {
-        gap: 4px;
-    }
-
-    .game-controls {
-        gap: 4px;
-    }
-
-    .btn {
-        font-size: 10px;
-        padding: 4px 5px;
-        min-height: 26px;
-    }
-
-    .disk-selector {
-        gap: 5px;
-    }
-
-    .selector-label {
-        font-size: 11px;
-    }
-
-    .disk-option {
-        padding: 3px;
-        min-width: 24px;
-        min-height: 24px;
-    }
-
-    .disk-option span {
-        font-size: 11px;
-    }
-
-    .speed-control {
-        padding: 4px;
-        gap: 4px;
-        font-size: 10px;
-    }
-
-    .speed-label {
-        font-size: 10px;
-    }
-
-    .speed-value {
-        font-size: 10px;
-        min-width: 35px;
-    }
-
-    .control-group {
-        gap: 3px;
-    }
-}

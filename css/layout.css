@@ -22,22 +22,26 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 8px 12px;
+    padding: 6px 10px;
     background: var(--color-primary);
     color: white;
     box-shadow: var(--shadow-md);
 }
 
 .game-title {
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 600;
 }
 
 .move-counter {
     display: flex;
     align-items: center;
-    gap: var(--spacing-sm);
-    font-size: 15px;
+    gap: 4px;
+    font-size: 12px;
+}
+
+.move-counter .label {
+    display: none;
 }
 
 .move-counter .count {
@@ -51,23 +55,24 @@ body {
 
 /* Game Board */
 .game-board {
-    flex: 1;
+    flex: 0 0 auto;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    padding: 4px;
+    justify-content: flex-start;
+    padding: 2px 4px;
     overflow: hidden;
     position: relative;
+    min-height: auto;
 }
 
 .towers-container {
     display: flex;
     justify-content: space-around;
     align-items: flex-end;
-    height: 100%;
-    max-height: 150px;
-    padding: 0 var(--spacing-sm);
-    margin: 0;
+    height: auto;
+    max-height: 80px;
+    padding: 0 4px;
+    margin: 2px 0;
 }
 
 /* Hint Display */
@@ -99,7 +104,7 @@ body {
 
 /* Controls */
 .controls {
-    padding: 8px 12px;
+    padding: 6px 10px;
     background: white;
     border-top: 1px solid var(--color-border);
     box-shadow: 0 -2px 10px var(--color-shadow);
@@ -235,46 +240,6 @@ body {
     color: var(--color-primary);
 }
 
-/* Responsive adjustments - Mobile portrait */
-@media (max-width: 768px) and (orientation: portrait) {
-    .game-header {
-        padding: 3px 6px;
-    }
-
-    .game-title {
-        font-size: 12px;
-    }
-
-    .move-counter {
-        font-size: 11px;
-        gap: 4px;
-    }
-
-    .move-counter .label {
-        display: none;
-    }
-
-    .move-counter .count {
-        padding: 2px 6px;
-        min-width: 20px;
-        font-size: 11px;
-    }
-
-    .controls {
-        padding: 4px 6px;
-    }
-
-    .game-board {
-        padding: 0;
-        justify-content: flex-start;
-        margin-top: 0;
-    }
-
-    .towers-container {
-        padding: 0 4px;
-        margin: 0;
-    }
-}
 
 @media (orientation: landscape) and (max-height: 500px) {
     .game-header {
