@@ -59,7 +59,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    padding: 2px 4px;
+    padding: 8px 4px 10px 4px;
     overflow: hidden;
     position: relative;
     min-height: auto;
