@@ -28,7 +28,7 @@
 .peg::after {
     content: '';
     position: absolute;
-    bottom: calc(var(--peg-height) * -1);
+    bottom: -20px;
     left: 50%;
     transform: translateX(-50%);
     width: 100px;
@@ -177,14 +177,19 @@
 /* Responsive adjustments */
 @media (max-width: 375px) {
     :root {
-        --disk-height: 24px;
-        --disk-min-width: 50px;
-        --disk-width-increment: 16px;
-        --peg-height: 140px;
+        --disk-height: 20px;
+        --disk-min-width: 45px;
+        --disk-width-increment: 14px;
+        --peg-height: 110px;
     }
 
     .disk {
-        font-size: var(--font-size-sm);
+        font-size: 12px;
+    }
+
+    .towers-container {
+        max-height: 200px;
+        padding: 4px 4px;
     }
 }
 
