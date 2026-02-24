@@ -10,7 +10,7 @@
     max-width: 150px;
     min-width: 100px;
     position: relative;
-    padding-bottom: 32px;
+    padding-bottom: 22px;
 }
 
 /* Peg */
@@ -188,12 +188,13 @@
     }
 
     .towers-container {
-        max-height: 95px;
+        max-height: 90px;
         padding: 0 4px;
+        margin: 2px 0;
     }
 
     .tower {
-        padding-bottom: 20px;
+        padding-bottom: 16px;
     }
 
     .disk-container {
@@ -201,7 +202,12 @@
     }
 
     .peg {
-        bottom: 20px;
+        bottom: 16px;
+    }
+
+    .tower-label {
+        bottom: -6px;
+        font-size: 11px;
     }
 }
 
