@@ -153,7 +153,7 @@
 
     .game-board {
         flex: none !important;
-        padding: 20px 4px 20px 4px !important;
+        padding: 200px 4px 200px 4px !important;
     }
 }
 
