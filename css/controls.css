@@ -209,50 +209,50 @@
 /* Responsive adjustments */
 @media (max-width: 375px) {
     .setup-controls {
-        gap: 6px;
+        gap: 5px;
     }
 
     .game-controls {
-        gap: 6px;
+        gap: 5px;
     }
 
     .btn {
-        font-size: 11px;
-        padding: 5px 6px;
-        min-height: 28px;
-    }
-
-    .disk-selector {
-        gap: 6px;
-    }
-
-    .selector-label {
-        font-size: 12px;
-    }
-
-    .disk-option {
-        padding: 4px;
-        min-width: 26px;
+        font-size: 10px;
+        padding: 4px 5px;
         min-height: 26px;
     }
 
+    .disk-selector {
+        gap: 5px;
+    }
+
+    .selector-label {
+        font-size: 11px;
+    }
+
+    .disk-option {
+        padding: 3px;
+        min-width: 24px;
+        min-height: 24px;
+    }
+
     .disk-option span {
-        font-size: 12px;
+        font-size: 11px;
     }
 
     .speed-control {
-        padding: 5px;
-        gap: 5px;
-        font-size: 11px;
+        padding: 4px;
+        gap: 4px;
+        font-size: 10px;
     }
 
     .speed-label {
-        font-size: 11px;
+        font-size: 10px;
     }
 
     .speed-value {
-        font-size: 11px;
-        min-width: 40px;
+        font-size: 10px;
+        min-width: 35px;
     }
 
     .control-group {

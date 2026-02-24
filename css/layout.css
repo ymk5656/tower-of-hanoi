@@ -22,14 +22,14 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px var(--spacing-md);
+    padding: 8px 12px;
     background: var(--color-primary);
     color: white;
     box-shadow: var(--shadow-md);
 }
 
 .game-title {
-    font-size: 15px;
+    font-size: 14px;
     font-weight: 600;
 }
 
@@ -65,8 +65,8 @@ body {
     justify-content: space-around;
     align-items: flex-end;
     height: 100%;
-    max-height: 180px;
-    padding: 4px var(--spacing-sm);
+    max-height: 150px;
+    padding: 2px var(--spacing-sm);
 }
 
 /* Hint Display */
@@ -98,7 +98,7 @@ body {
 
 /* Controls */
 .controls {
-    padding: 10px var(--spacing-md);
+    padding: 8px 12px;
     background: white;
     border-top: 1px solid var(--color-border);
     box-shadow: 0 -2px 10px var(--color-shadow);
@@ -237,25 +237,30 @@ body {
 /* Responsive adjustments */
 @media (max-width: 375px) {
     .game-header {
-        padding: 6px 8px;
+        padding: 4px 6px;
     }
 
     .game-title {
-        font-size: 13px;
+        font-size: 12px;
     }
 
     .move-counter {
-        font-size: 12px;
+        font-size: 11px;
+        gap: 4px;
+    }
+
+    .move-counter .label {
+        display: none;
     }
 
     .move-counter .count {
-        padding: 1px 6px;
-        min-width: 24px;
-        font-size: 12px;
+        padding: 2px 6px;
+        min-width: 20px;
+        font-size: 11px;
     }
 
     .controls {
-        padding: 6px 8px;
+        padding: 5px 6px;
     }
 
     .game-board {

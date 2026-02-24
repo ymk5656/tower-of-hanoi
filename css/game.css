@@ -177,27 +177,31 @@
 /* Responsive adjustments */
 @media (max-width: 375px) {
     :root {
-        --disk-height: 16px;
-        --disk-min-width: 38px;
-        --disk-width-increment: 10px;
-        --peg-height: 75px;
+        --disk-height: 14px;
+        --disk-min-width: 35px;
+        --disk-width-increment: 9px;
+        --peg-height: 60px;
     }
 
     .disk {
-        font-size: 10px;
+        font-size: 9px;
     }
 
     .towers-container {
-        max-height: 120px;
-        padding: 2px 4px;
+        max-height: 95px;
+        padding: 0 4px;
     }
 
     .tower {
-        padding-bottom: 24px;
+        padding-bottom: 20px;
     }
 
     .disk-container {
-        padding-bottom: 10px;
+        padding-bottom: 8px;
+    }
+
+    .peg {
+        bottom: 20px;
     }
 }
 
