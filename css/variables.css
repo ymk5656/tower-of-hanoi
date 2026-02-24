@@ -29,15 +29,15 @@
     --spacing-xl: 32px;
 
     /* Disk Dimensions */
-    --disk-height: 22px;
-    --disk-min-width: 50px;
-    --disk-width-increment: 15px;
-    --disk-border-radius: 11px;
-    --disk-margin: 2px;
+    --disk-height: 20px;
+    --disk-min-width: 48px;
+    --disk-width-increment: 14px;
+    --disk-border-radius: 10px;
+    --disk-margin: 1px;
 
     /* Tower Dimensions */
     --peg-width: 8px;
-    --peg-height: 120px;
+    --peg-height: 100px;
     --peg-color: #95A5A6;
     --tower-base-height: 10px;
     --tower-base-color: #7F8C8D;

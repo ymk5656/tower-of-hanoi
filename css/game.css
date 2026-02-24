@@ -48,7 +48,7 @@
     position: relative;
     z-index: var(--z-disk);
     gap: var(--disk-margin);
-    padding-bottom: 24px;
+    padding-bottom: 14px;
 }
 
 /* Disk */
@@ -177,23 +177,27 @@
 /* Responsive adjustments */
 @media (max-width: 375px) {
     :root {
-        --disk-height: 18px;
-        --disk-min-width: 42px;
-        --disk-width-increment: 12px;
-        --peg-height: 95px;
+        --disk-height: 16px;
+        --disk-min-width: 38px;
+        --disk-width-increment: 10px;
+        --peg-height: 75px;
     }
 
     .disk {
-        font-size: 11px;
+        font-size: 10px;
     }
 
     .towers-container {
-        max-height: 160px;
-        padding: 4px 4px;
+        max-height: 120px;
+        padding: 2px 4px;
     }
 
     .tower {
-        padding-bottom: 28px;
+        padding-bottom: 24px;
+    }
+
+    .disk-container {
+        padding-bottom: 10px;
     }
 }
 
