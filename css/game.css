@@ -10,13 +10,13 @@
     max-width: 150px;
     min-width: 100px;
     position: relative;
-    padding-bottom: 30px;
+    padding-bottom: 32px;
 }
 
 /* Peg */
 .peg {
     position: absolute;
-    bottom: 30px;
+    bottom: 24px;
     width: var(--peg-width);
     height: var(--peg-height);
     background: var(--peg-color);
@@ -28,7 +28,7 @@
 .peg::after {
     content: '';
     position: absolute;
-    bottom: -20px;
+    bottom: -10px;
     left: 50%;
     transform: translateX(-50%);
     width: 100px;
@@ -48,7 +48,7 @@
     position: relative;
     z-index: var(--z-disk);
     gap: var(--disk-margin);
-    padding-bottom: 30px;
+    padding-bottom: 24px;
 }
 
 /* Disk */
@@ -135,7 +135,7 @@
 /* Tower labels */
 .tower-label {
     position: absolute;
-    bottom: 0;
+    bottom: -8px;
     left: 50%;
     transform: translateX(-50%);
     font-size: var(--font-size-sm);
@@ -177,19 +177,23 @@
 /* Responsive adjustments */
 @media (max-width: 375px) {
     :root {
-        --disk-height: 20px;
-        --disk-min-width: 45px;
-        --disk-width-increment: 14px;
-        --peg-height: 110px;
+        --disk-height: 18px;
+        --disk-min-width: 42px;
+        --disk-width-increment: 12px;
+        --peg-height: 95px;
     }
 
     .disk {
-        font-size: 12px;
+        font-size: 11px;
     }
 
     .towers-container {
-        max-height: 200px;
+        max-height: 160px;
         padding: 4px 4px;
+    }
+
+    .tower {
+        padding-bottom: 28px;
     }
 }
 

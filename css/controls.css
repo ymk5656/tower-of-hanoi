@@ -4,7 +4,7 @@
 .setup-controls {
     display: flex;
     flex-direction: column;
-    gap: var(--spacing-md);
+    gap: 10px;
 }
 
 .disk-selector {
@@ -67,12 +67,12 @@
 .game-controls {
     display: flex;
     flex-direction: column;
-    gap: var(--spacing-md);
+    gap: 10px;
 }
 
 .control-group {
     display: flex;
-    gap: var(--spacing-sm);
+    gap: 6px;
 }
 
 /* Buttons */
@@ -208,28 +208,44 @@
 
 /* Responsive adjustments */
 @media (max-width: 375px) {
-    .btn {
-        font-size: 12px;
-        padding: 8px 10px;
-        min-height: 36px;
-    }
-
-    .disk-option {
-        padding: 6px;
-        min-width: 30px;
-        min-height: 30px;
-    }
-
-    .disk-option span {
-        font-size: 14px;
-    }
-
-    .speed-control {
-        padding: 8px;
+    .setup-controls {
         gap: 8px;
     }
 
-    .control-group {
+    .game-controls {
+        gap: 8px;
+    }
+
+    .btn {
+        font-size: 12px;
+        padding: 6px 8px;
+        min-height: 32px;
+    }
+
+    .disk-selector {
+        gap: 8px;
+    }
+
+    .selector-label {
+        font-size: 13px;
+    }
+
+    .disk-option {
+        padding: 5px;
+        min-width: 28px;
+        min-height: 28px;
+    }
+
+    .disk-option span {
+        font-size: 13px;
+    }
+
+    .speed-control {
+        padding: 6px;
         gap: 6px;
+    }
+
+    .control-group {
+        gap: 4px;
     }
 }
